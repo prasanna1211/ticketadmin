@@ -1,0 +1,54 @@
+<h1> List of all events </h1>
+<!-- Function for getting month-->
+<% def get_month(res) %>
+    <% s = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"] %>
+    <% return s[(res.to_i)-1] %>
+<% end %>
+<!-- Function for getting month-->
+
+<% @events.each do|e| %>
+  <% @event_date = e.event_date %>
+  <% @edate = @event_date.to_s %>
+  <div class = "container-fluid">
+    <div class = "row ">
+      <div id= "coloumn-height">
+        <div class = "col-lg-10 col-lg-offset-2">
+          <div class = "demo grid-margin col-lg-2 ">   
+            <div class = "date-cell-item">
+              <h1> <%= @edate[8..9] %></h1>
+              <h2> <%= get_month(@edate[5..6]) %></h2><br>
+              <h4> <span class = "glyphicon glyphicon-map-marker" aria-hidden = "true"></span> <%= e.event_location %> </h4>
+            </div>
+          </div>
+          <div class = "grid-margin col-lg-4 demo">
+            <div class = "cell-item">
+              <h4> Event Name: <%= e.event_name %> </h4><br>
+              <h4> Event Type: <%= e.event_type %></h4></h4><br>
+              <h4> Description: <%= e.event_description %></h4><br>
+              <% if Time.now > @event_date %>
+                <h4> Status: Registrations closed </h4><br>
+              <% else %>
+                <h4> Status: Registrations open </h4><br>
+              <% end %>
+            </div>
+          </div>
+          <div class = "grid-margin col-lg-3 demo">
+            <div class = "cell-item">
+              <h2> Booking coloumn </h2>
+              <h4> Total attendees  </h4><br>
+              <h4> Price </h4><br>
+              <h4> Attend / Unattend </h4><br>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>  
+  </div>  
+<% end %>
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+<h1> Form For new Event </h1>
+<%= form_for @event, url: events_path do|f| %>
+  <div class="field form-group">
+    <%= f.label :event_name, class: 'col-lg-offset-3 col-lg-4 control-label'%>
+    <div class=" col-lg-offset-3 col-lg-5">
+      <%= f.text_field :event_name, class: ' form-control' %>
+    </div>
+  <br><br><br><br>
+  </div>
+  <div class="field form-group">
+    <%= f.label :event_type, class: 'col-lg-offset-3 col-lg-3 control-label' %>
+    <div class="col-lg-offset-3 col-lg-5">
+      <%= f.text_field :event_type,class: 'form-control' %> <br>
+    </div>
+  </div>
+  <br><br><br><br>
+  </div>
+  <div class="field form-group">
+    <%= f.label :event_date, class: 'col-lg-offset-3 col-lg-3 control-label' %>
+    <div class="col-lg-offset-3 col-lg-5">
+      <%= f.text_field :event_date,class: 'form-control' %> <br>
+    </div>
+  </div>
+  <br><br><br><br>
+  </div>
+  <div class="field form-group">
+    <%= f.label :event_location, class: 'col-lg-offset-3 col-lg-3 control-label' %>
+    <div class="col-lg-offset-3 col-lg-5">
+      <%= f.text_field :event_location,class: 'form-control' %> <br>
+    </div>
+  </div>
+  <br><br><br><br>
+  </div>
+  <div class="field form-group">
+    <%= f.label :event_description, class: 'col-lg-offset-3 col-lg-3 control-label' %>
+    <div class="col-lg-offset-3 col-lg-5">
+      <%= f.text_field :event_description,class: 'form-control' %> <br>
+    </div>
+  </div>
+  <br><br><br><br>
+  <div class="actions form-group">
+    <div class="col-lg-offset-3 col-lg-2">
+      <%= f.submit %>
+    </div>
+  </div>
+  
+<%end%>
