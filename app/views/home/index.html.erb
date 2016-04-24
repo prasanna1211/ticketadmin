@@ -1,9 +1,34 @@
-<h1> Home Page </h1>
-<%= link_to 'Home', root_path %>
-<% if user_signed_in? %>
-  <%= link_to 'Logout',destroy_user_session_path %>
-<% else %>
-  <%= link_to 'Register', new_user_registration_path %>
-  <%= link_to 'Login', new_user_session_path %>
-<% end %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Ticket Admin</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to 'Home', root_path %><span class="sr-only">(current)</span></a></li> <!-- Link to home page-->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if !user_signed_in? %>
+          <li><%= link_to 'Register', new_user_registration_path %><span class="sr-only">(current)</span></a></li> <!-- Link to Register page-->
+          <li><%= link_to 'Login', new_user_session_path %><span class="sr-only">(current)</span></a></li> <!-- Link to login page-->
+        <% else %>
+          <li class="nav-text"><span> Signed in as <%= current_user.email %> </span><span class="sr-only">(current) </span></a></li>
+          <li><%= link_to 'Logout', destroy_user_session_path,method: :delete %><span class="sr-only">(current)</span></a></li> <!-- Link to logout page-->
+        <% end %>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
 
