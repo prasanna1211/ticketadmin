@@ -2,5 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .nav-text {
-   padding-top: 14px; 
+   padding-top: 15px; 
+}
+.navbar {
+  margin-top: 0px;
+  margin-bottom: 2px;
+  color: black
+}
+
+.font-theme {
+  color: black;
+  font: 17px arial, sans-serif;
+}
+/* Navbar color */
+.nav-theme {
+  background-color: #e1f8e8;
+  color: green;
+  font: 17px arial, sans-serif;
+
+}
+/* Navbar title */
+.navbar-custom .navbar-brand {
+  color: black;
+  font: 20px arial, sans-serif;
+  font-weight: bold;  
+  font-style: Italic;  
+}
+
+/* navbar link */
+.navbar-nav > li > a {
+    color: black;
+    text-decoration: underline;
+}
+
+/*grid - margin*/
+.grid-margin {
+  margin-top:10px;
+  border: #cdcdcd medium solid;
+  
+}
+
+/* coloumn constant height */
+#coloumn-height {
+  overflow: hidden;
+}
+.demo{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.date-cell-item > h1{
+  font-size: 10em;
+  text-align: center;
+  line-height: 100%
+}
+.date-cell-item > h2{
+  font-size: 4em;
+  text-align: center;
+  line-height: 20%
+}
+.date-cell-item > h4{
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 40%
+}
+.glyphicon.glyphicon-calendar {
+  font-size: 1em;
 }

@@ -1,34 +1,62 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Ticket Admin</a>
+<h1> List of all events </h1>
+<div class = "container-fluid">
+  <div class = "row ">
+    <div id= "coloumn-height">
+      <div class = "col-lg-10 col-lg-offset-2">
+        <div class = "demo grid-margin col-lg-2 ">   
+          <div class = "date-cell-item">
+            <h1> 12 </h1>
+            <h2> DEC</h2><br>
+            <h4> <span class = "glyphicon glyphicon-map-marker" aria-hidden = "true"></span> New Delhi </h4>
+          </div>
+        </div>
+        <div class = "grid-margin col-lg-4 demo">
+          <div class = "cell-item">
+            <h2> Description </h2>  
+            <h4> Line 1: </h4><br>
+            <h4> Line 2: </h4><br>
+            <h4> Line 3: </h4><br>
+            <h4> Line 4: </h4><br>
+          </div>
+        </div>
+        <div class = "grid-margin col-lg-3 demo">
+          <div class = "cell-item">
+            <h3> Register </h3>
+            <h4> Line 1: </h4><br>
+            <h4> Line 2: </h4><br>
+            <h4> Line 3: </h4><br>
+            <h4> Line 4: </h4><br>
+          </div>
+        </div>
+      </div> 
     </div>
+  </div>  
+  <div class = "row ">
+    <div id= "coloumn-height">
+      <div class = "col-lg-10 col-lg-offset-2">
+        <div class = "demo grid-margin col-lg-2 ">
+          <h3>November</h3>
+          <h2> 12 </h2>
+          <h3>Thursday</h3>
+          <h3>Delhi</h3>
+        </div>
+        <div class = "grid-margin col-lg-4 demo">
+          <h2> Description </h2>  
+          Suspendisse ut odio quis sem iaculis auctor efficitur vel dolor. Morbi et nisl nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempus dapibus sapien id commodo. Mauris iaculis, arcu fermentum gravida tempus, leo metus tincidunt lacus, sit amet eleifend purus erat non leo. Sed in bibendum turpis, sed mollis eros. Ut at consectetur quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. uam tempus dapibus sapien id commodo. Mauris iaculis, arcu fermentum gravida tempus, leo metus tincidunt lacus, sit amet eleifend purus erat non leo. Sed in bibendum turpis, sed mollis eros. Ut at consectetur quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+        </div>
+        <div class = "grid-margin col-lg-3 demo">
+          <h3> Register </h3>
+          ligula non iaculis. In at nulla gravida, egestas risus a, mollis risus. Praesent accumsan at arcu quis hendrerit. Pellentesque scelerisque elit ut urna lacinia bibendum a quis sem. Mauris non sem a mauris elementum sollicitudin in sit amet odio. Ut in orci consectetur, tincidunt metus id, faucibus sem. Mauris non sem 
+        </div>
+      </div> 
+    </div>
+  </div>  
+</div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><%= link_to 'Home', root_path %><span class="sr-only">(current)</span></a></li> <!-- Link to home page-->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if !user_signed_in? %>
-          <li><%= link_to 'Register', new_user_registration_path %><span class="sr-only">(current)</span></a></li> <!-- Link to Register page-->
-          <li><%= link_to 'Login', new_user_session_path %><span class="sr-only">(current)</span></a></li> <!-- Link to login page-->
-        <% else %>
-          <li class="nav-text"><span> Signed in as <%= current_user.email %> </span><span class="sr-only">(current) </span></a></li>
-          <li><%= link_to 'Logout', destroy_user_session_path,method: :delete %><span class="sr-only">(current)</span></a></li> <!-- Link to logout page-->
-        <% end %>
-      </ul>
-      
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+
+
+
+
 
 
 
