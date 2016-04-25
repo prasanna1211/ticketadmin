@@ -66,6 +66,29 @@
   text-align: center;
   line-height: 40%
 }
+
 .glyphicon.glyphicon-calendar {
   font-size: 1em;
+}
+
+
+.event-show-items{
+  border: #cdcdcd medium solid;
+  padding: 15px;
+}
+.event-show-items > h1{
+  font-size: 23px;
+  margin-top: 0px;
+  border-bottom: solid;
+  padding-bottom: 10px;
+
+}
+
+.attending-success {
+  background-color: #13ce1f;
+  opacity: 0.3;
+}
+.attending-already {
+  background-color: #3295c3;
+  opacity: 0.3;
 }

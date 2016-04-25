@@ -1,0 +1,39 @@
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-lg-6 col-lg-offset-1">
+      <div class = "event-show-items">
+        <% if @user.present? && Time.now < @event.event_date %> 
+        <h1><b> Event Page </b> <span class = "attending-success"> (You have already registered this event) </span></h1>
+        <% end %>
+        <% if !@user.present? && Time.now < @event.event_date %>
+        <h1><b> Event Page </b> <span class = "attending-already"> (You are eligible to register for this event) </span></h1>  
+        <% end %>
+        <% if Time.now > @event.event_date %>
+        <h1><b> Event Page </b>  (Past Event.) </h1>  
+        <% end %>
+        <i><h3> Name: <%= @event.event_name %></h3>
+        <h3> Type: <%= @event.event_type %></h3>
+        <h3> Date: <%= @event.event_date %></h3>
+        <h3> Location: <%= @event.event_location %></h3>
+        <h3> Description: <%= @event.event_description %></h3></i>
+        <% if Time.now > @event.event_date %>
+
+          <%= link_to 'Attend Event', event_attend_path(@event),class: "btn btn-success disabled" %>
+          <%= link_to 'Unattend Event', event_unattend_path(@event),class: "btn btn-danger disabled" %>  
+        <% elsif @user.present? %>
+          
+          <%= link_to 'Attend Event', event_attend_path(@event),class: "btn btn-success disabled" %>
+          <%= link_to 'Unattend Event', event_unattend_path(@event),class: "btn btn-danger" %>  
+          
+        <% else %>
+          <%= link_to 'Attend Event', event_attend_path(@event),class: "btn btn-success " %>
+          <%= link_to 'Unattend Event', event_unattend_path(@event),class: "btn btn-danger disabled" %>  
+        <% end %>
+      </div>
+    </div>
+  </div>      
+</div>  
+
+<% @event.users.each do|u| %>
+  <h4> <%= u.email %> </h4>
+<% end %>

@@ -1,4 +1,4 @@
-<h1> List of all events </h1>
+<h1><center> Event List </center></h1>
 <!-- Function for getting month-->
 <% def get_month(res) %>
     <% s = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"] %>
@@ -22,22 +22,20 @@
           </div>
           <div class = "grid-margin col-lg-4 demo">
             <div class = "cell-item">
-              <h4> Event Name: <%= e.event_name %> </h4><br>
-              <h4> Event Type: <%= e.event_type %></h4></h4><br>
-              <h4> Description: <%= e.event_description %></h4><br>
+              <h4><i> Event Name: <%= e.event_name %></i></h4><br>
+              <h4><i> Event Type: <%= e.event_type %></i></h4></h4><br>
+              <blockquote> <%= e.event_description %></blockquote><br>
               <% if Time.now > @event_date %>
-                <h4> Status: Registrations closed </h4><br>
+                <%= link_to 'Registrations Closed', event_path(e), class: "btn btn-danger" %><br><br>
               <% else %>
-                <h4> Status: Registrations open </h4><br>
+                <%= link_to 'Registrations Open', event_path(e), class: "btn btn-success" %><br><br>
               <% end %>
             </div>
           </div>
           <div class = "grid-margin col-lg-3 demo">
             <div class = "cell-item">
-              <h2> Booking coloumn </h2>
-              <h4> Total attendees  </h4><br>
-              <h4> Price </h4><br>
-              <h4> Attend / Unattend </h4><br>
+              <h2><i> Pricing coloumn </i></h2>
+              <h4> Ticket Price: <span class = "glyphicon glyphicon-euro" aria-hidden = "true"></span> </h4><br>
             </div>
           </div>
         </div> 

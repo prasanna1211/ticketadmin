@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def index
     if user_signed_in?
       @events = Event.all
+      
     else 
       flash[:notice] = "Please login first"
       redirect_to new_user_session_path
@@ -24,10 +25,25 @@ class EventsController < ApplicationController
   def edit
   end
   def show
+    @event = Event.find(params[:id])
+    @user = @event.users.find_by(email: current_user.email)
+
   end
   def update
   end
   def destroy
+  end
+  def attend
+   @event = Event.find_by(id: params[:id]) 
+   @user = User.find_by(email: current_user.email)
+   @event.users << @user
+   redirect_to event_path(@event)
+  end
+  def unattend
+   @event = Event.find_by(id: params[:id]) 
+   @user = User.find_by(email: current_user.email)
+   @event.users.delete(@user)
+   redirect_to event_path 
   end
   
   private
