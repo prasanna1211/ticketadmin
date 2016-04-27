@@ -3,13 +3,13 @@
     <div class = "col-lg-6 col-lg-offset-1">
       <div class = "event-show-items">
         <% if @user.present? && Time.now < @event.event_date %> 
-        <h1><b> Event Page </b> <span class = "attending-success"> (You have already registered this event) </span></h1>
+          <h1><b> Event Page </b> <span class = "attending-success"> (You have already registered this event) </span></h1>
         <% end %>
         <% if !@user.present? && Time.now < @event.event_date %>
-        <h1><b> Event Page </b> <span class = "attending-already"> (You are eligible to register for this event) </span></h1>  
+          <h1><b> Event Page </b> <span class = "attending-a"> (You are eligible to register for this event) </span></h1>  
         <% end %>
         <% if Time.now > @event.event_date %>
-        <h1><b> Event Page </b>  (Past Event.) </h1>  
+          <h1><b> Event Page </b>  (Past Event.) </h1>  
         <% end %>
         <i><h3> Name: <%= @event.event_name %></h3>
         <h3> Type: <%= @event.event_type %></h3>
@@ -31,9 +31,13 @@
         <% end %>
       </div>
     </div>
-  </div>      
-</div>  
-
-<% @event.users.each do|u| %>
-  <h4> <%= u.email %> </h4>
-<% end %>
+    <div class = "col-lg-3 col-lg-offset-1">
+      <div class = "event-show-items">
+      <h1> People who are Attending </h1>
+      <% @event.users.each do|u| %>
+         <h4> <%= u.email %> </h4>
+      <% end %>
+      </div>
+    </div>      
+  </div>  
+</div>
